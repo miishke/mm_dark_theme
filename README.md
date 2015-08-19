@@ -1,5 +1,5 @@
 # MM-dark Theme for IPython and Jupyter notebooks
-This is a customized dark theme, designed not to strain the eyes with bright colors, and it uses colors which help easily find desired code section.<br>
+This is a customized dark theme, designed not to strain the eyes with bright colors, and it uses colors which help easily find desired code section.<br><br>
 In this theme, the current cell is indicated by a side-bar on the left hand side of the page. The indicator bar changes color when in editing mode.
 
 ## Installation
@@ -8,7 +8,7 @@ These installation instructions are for "vanilla" IPython & Jupyter notebook set
 **IPython**<br>
 Copy **custom.css** and **custom.js** files into:<br>
 **~/.ipython/profile_default/static/custom**<br>
-You will overwrite two existing place-holding files with same names.<br>
+You will overwrite two existing place-holding files with same names.<br><br>
 **Jupyter**<br>
 Copy **custom.css** and **custom.js** files into:<br>
 **~/.jupyter/custom**<br>
@@ -17,7 +17,7 @@ You will overwrite two existing place-holding files with same names.<br><br>
 **IPython**<br>
 Copy **custom.css** and **custom.js** files into:<br>
 **C:\Users\YourUserName\\.ipython\profile_default\static\custom**<br>
-You will overwrite two existing place-holding files with same names.<br>
+You will overwrite two existing place-holding files with same names.<br><br>
 **Jupyter**<br>
 Copy **custom.css** and **custom.js** files into:<br>
 **C:\Users\YourUserName\\.jupyter\custom**<br>
