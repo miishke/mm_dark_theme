@@ -1,6 +1,7 @@
 # MM-dark Theme for IPython and Jupyter notebooks
 This is a customized dark theme, designed not to strain the eyes with bright colors, and it uses colors which help easily find desired code section.<br><br>
-In this theme, the current cell is indicated by a side-bar on the left hand side of the page. The indicator bar changes color when in editing mode.
+In this theme, the current cell is indicated by a side-bar on the left hand side of the page. The indicator bar changes color when in editing mode.<br><br>
+When in editing mode, 80 character line (ruler) is displayed, and current line is highlighted. The theme uses a blinking block cursor.
 
 ## Installation
 These installation instructions are for "vanilla" IPython & Jupyter notebook setup. If you have themed and customized your notebook, I will assume you know how to patch this into your setup.
