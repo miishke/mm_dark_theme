@@ -123,6 +123,8 @@ div.input_area {border: none; border-radius: 0; background-color: #d8d8d8;}
 div.input_prompt {color: #ab7967;}
 div.output_prompt {color: #b48ead;}
 
+div.output_scroll {box-shadow: none;}
+
 div.output_area pre {
   font-weight: normal;
   color: #bbc0c9;
