@@ -54,26 +54,26 @@ ul#tabs {margin-bottom: 0px;}
 #notebook_toolbar > div.col-sm-8.no-padding {padding-left: 8px;}
 
 /*pad file tab reload button*/
-#notebook_toolbar > div.col-sm-4.no-padding.tree-buttons > div.pull-right{
+#notebook_toolbar > div.col-sm-4.no-padding.tree-buttons > div.pull-right {
   margin-right: 7px;
 }
 
 /*pad running tab info text*/
-#running_toolbar > div.col-sm-8.no-padding{padding-left: 8px;}
+#running_toolbar > div.col-sm-8.no-padding {padding-left: 8px;}
 
 /*pad running tab reload button*/
-#running_toolbar > div.col-sm-4.no-padding.tree-buttons{
+#running_toolbar > div.col-sm-4.no-padding.tree-buttons {
   padding-top: 2px;
   padding-right: 8px;
 }
 
 /*pad cluster tab info text*/
-#cluster_toolbar > div.col-xs-8.no-padding{
+#cluster_toolbar > div.col-xs-8.no-padding {
   padding-left: 8px;
 }
 
 /*pad cluster tab reload button*/
-#cluster_toolbar > div.col-xs-4.no-padding.tree-buttons{
+#cluster_toolbar > div.col-xs-4.no-padding.tree-buttons {
   padding-top: 2px;
   padding-right: 8px;
 }
@@ -145,7 +145,7 @@ div.cell.selected {
 }
 
 /*text between `` in markdown cells*/
-.rendered_html code{
+.rendered_html code {
   border: none;
   background-color: #303540;
   color: #7f848d;
@@ -177,7 +177,7 @@ div.output_stderr pre {color: #2e2e2e;}
 
 /*Widgets ===================================================================*/
 
-div.widget-subarea{
+div.widget-subarea {
   font-family: 'Noto Sans', sans-serif;
   font-size: 15px;
   color: #bbc0c9;
@@ -208,10 +208,14 @@ button.close {
   background: rgba(255,255,255,0.35);
 }
 
-/*styling for matching brackets to make them stand out*/
+/*styling for matching/non-matching brackets to make them stand out*/
 .cm-s-ipython .CodeMirror-matchingbracket {
   font-weight: bold !important;
   color: #00ffff !important;
+}
+
+div.CodeMirror span.CodeMirror-nonmatchingbracket {
+  font-weight: bold !important;
 }
 
 /*CodeMirror color styling*/
@@ -221,7 +225,7 @@ span.ansigreen {color: #a3be8c;}
 span.ansiyellow {color: #ebcb8b;}
 span.ansiblue {color: #477ca1;}
 span.ansipurple {color: #a16a94;}
-span.ansicyan{color: ##04b4ae}
+span.ansicyan {color: ##04b4ae}
 span.ansigray {color: #a7adba;}
 
 .cm-s-ipython span.cm-property, .cm-s-ipython span.cm-attribute {color: #bbc0c9;}
@@ -243,8 +247,8 @@ span.ansigray {color: #a7adba;}
 .cm-s-ipython span.cm-link {color: #a16a94;}
 .cm-s-ipython span.cm-error {background: #f2777a; color: #2e2e2e;}
 .cm-s-default .cm-tag {color: #6a0c7f;}
-.cm-s-default .cm-quote{color:#6a0c7f;}
-.cm-s-default .cm-comment{color: #6a0c7f !important;}
+.cm-s-default .cm-quote {color:#6a0c7f;}
+.cm-s-default .cm-comment {color: #6a0c7f !important;}
 .cm-s-default .cm-header {
   color: #333333;
   font-family: 'Noto Sans', sans-serif;
