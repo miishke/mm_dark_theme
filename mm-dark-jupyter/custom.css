@@ -245,6 +245,7 @@ span.ansigray {color: #a7adba;}
   font-family: 'Noto Sans', sans-serif;
   font-weight: normal;
 }
+.cm-s-default .CodeMirror-selected {background:#81daf5;}
 
 /*styling for ruler to match theme colors*/
 .CodeMirror-ruler {
