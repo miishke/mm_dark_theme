@@ -37,5 +37,5 @@ Go to last cell: `Ctrl`-`down`<br><br>
 Split cell at current line: `Alt`-`s`<br>
 
 ## Sample Images of Landing Page and Notebook
-![alt txt](https://github.com/miishke/mm_dark_theme/blob/master/images/landing_page "Landing page")
-![alt txt](https://github.com/miishke/mm_dark_theme/blob/master/images/notebook "Notebook")
+![Landing page](https://github.com/miishke/mm_dark_theme/blob/master/images/landing_page.png "Landing page")<br>
+![Notebook](https://github.com/miishke/mm_dark_theme/blob/master/images/notebook.png "Notebook")
