@@ -175,5 +175,23 @@ require([
                 return false;
             }
         });
-    })
-)
+
+        IPython.keyboard_manager.command_shortcuts.add_shortcut('Alt-k', {
+            help : 'move cell up',
+            help_index : 'zz',
+            handler : function (event) {
+                IPython.notebook.move_cell_up();
+                return false;
+            }
+        });
+
+        IPython.keyboard_manager.command_shortcuts.add_shortcut('Alt-j', {
+            help : 'move cell down',
+            help_index : 'zz',
+            handler : function (event) {
+                IPython.notebook.move_cell_down();
+                return false;
+            }
+        });
+    });
+);

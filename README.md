@@ -28,13 +28,15 @@ You will overwrite two existing place-holding files with same names.<br>
 **Command mode**<br>
 Toggle header: `Alt`-`h`<br>
 Toggle menu bar: `Alt`-`m`<br>
+Toggle line number in all cells: `Alt`-`n`<br>
 Clear all cells output: `Alt`-`c`<br>
 Clear current cell output: `Alt`-`x`<br>
 Merge with cell above: `Alt`-`a`<br>
 Merge with cell below: `Alt`-`b`<br>
-Toggle line number in all cells: `Alt`-`n`<br>
 Go to first cell: `Ctrl`-`up`<br>
-Go to last cell: `Ctrl`-`down`<br><br>
+Go to last cell: `Ctrl`-`down`<br>
+Move cell up: `Alt`-`k`<br>
+Move cell down: `Alt`-`j`<br><br>
 **Edit mode**<br>
 Split cell at current line: `Alt`-`s`<br>
 
