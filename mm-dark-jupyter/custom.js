@@ -1,4 +1,143 @@
-// Custom settings
+require([
+    'base/js/namespace',
+    'base/js/events',
+    'codemirror/addon/search/search',
+    'codemirror/addon/search/searchcursor',
+    'codemirror/addon/dialog/dialog',
+    'codemirror/addon/selection/active-line'],
+    $([IPython.events]).on('app_initialized.NotebookApp', function() {
+
+    IPython.CodeCell.options_default.cm_config.autoCloseBrackets = false;
+    IPython.CodeCell.options_default.cm_config.lineNumbers = true;
+    IPython.CodeCell.options_default.cm_config.cursorBlinkRate = 330;
+    IPython.CodeCell.options_default.cm_config.lineWrapping = true;
+
+    $('div#header-container').toggle();
+    $('.header-bar').toggle(); // 1px high! WTF?!
+    $('div#maintoolbar').toggle();
+    Jupyter.menubar._size_header()
+
+    IPython.keyboard_manager.command_shortcuts.add_shortcut('Alt-m', {
+        help : 'toggle menu bar',
+        help_index : 'zz',
+        handler : function (event) {
+            $('div#menubar-container').toggle();
+            Jupyter.menubar._size_header();
+            return false;
+        }
+    });
+
+    IPython.keyboard_manager.command_shortcuts.add_shortcut('Alt-h', {
+        help : 'toggle header',
+        help_index : 'zz',
+        handler : function (event) {
+            $('div#header-container').toggle();
+            $('.header-bar').toggle();
+            Jupyter.menubar._size_header()
+            return false;
+        }
+    });
+
+    IPython.keyboard_manager.command_shortcuts.add_shortcut('Alt-c', {
+        help : 'clear all output',
+        help_index : 'zz',
+        handler : function (event) {
+            IPython.notebook.clear_all_output();
+            return false;
+        }
+    });
+
+    IPython.keyboard_manager.command_shortcuts.add_shortcut('Alt-x', {
+        help : 'clear output',
+        help_index : 'zz',
+        handler : function (event) {
+            IPython.notebook.clear_output();
+            return false;
+        }
+    });
+
+    IPython.keyboard_manager.command_shortcuts.add_shortcut('Alt-a', {
+        help : 'merge cell above',
+        help_index : 'zz',
+        handler : function (event) {
+            IPython.notebook.merge_cell_above();
+            return false;
+        }
+    });
+
+    IPython.keyboard_manager.command_shortcuts.add_shortcut('Alt-b', {
+        help : 'merge cell below',
+        help_index : 'zz',
+        handler : function (event) {
+            IPython.notebook.merge_cell_below();
+            return false;
+        }
+    });
+
+    IPython.keyboard_manager.edit_shortcuts.add_shortcut('Alt-s', {
+        help : 'split cell',
+        help_index : 'zz',
+        handler : function (event) {
+            IPython.notebook.split_cell();
+            return false;
+        }
+    });
+
+    IPython.keyboard_manager.command_shortcuts.add_shortcut('Alt-n', {
+        help : 'toggle line number all cells',
+        help_index : 'zz',
+        handler : function (event) {
+            var c = IPython.notebook.get_cells();
+            for(var i in c){
+                c[i].toggle_line_numbers();
+            }
+            return false;
+        }
+    });
+
+    IPython.keyboard_manager.command_shortcuts.add_shortcut('Ctrl-up', {
+        help : 'go to top cell',
+        help_index : 'zz',
+        handler : function (event) {
+            IPython.notebook.select(0);
+            IPython.notebook.scroll_to_top();
+            return false;
+        }
+    });
+
+    IPython.keyboard_manager.command_shortcuts.add_shortcut('Ctrl-down', {
+        help : 'go to bottom cell',
+        help_index : 'zz',
+        handler : function (event) {
+            var ncells = IPython.notebook.ncells();
+            IPython.notebook.select(ncells-1);
+            IPython.notebook.scroll_to_bottom();
+            return false;
+        }
+    });
+
+    IPython.keyboard_manager.command_shortcuts.add_shortcut('Alt-k', {
+        help : 'move cell up',
+        help_index : 'zz',
+        handler : function (event) {
+            IPython.notebook.move_cell_up();
+            return false;
+        }
+    });
+
+    IPython.keyboard_manager.command_shortcuts.add_shortcut('Alt-j', {
+        help : 'move cell down',
+        help_index : 'zz',
+        handler : function (event) {
+            IPython.notebook.move_cell_down();
+            return false;
+        }
+    });
+}));
+
+
+
+
 
 $([IPython.events]).on('command_mode.Cell', function (event, data) {
 
@@ -58,141 +197,3 @@ $([IPython.events]).on('edit_mode.Cell', function (event, data) {
         setRulers(cm);
     }
 });
-
-require([
-    'base/js/namespace',
-    'base/js/events',
-    'codemirror/addon/search/search',
-    'codemirror/addon/search/searchcursor',
-    'codemirror/addon/dialog/dialog',
-    'codemirror/addon/selection/active-line'
-], $([IPython.events]).on('app_initialized.NotebookApp', function() {
-
-        IPython.CodeCell.options_default.cm_config.autoCloseBrackets = false;
-        IPython.CodeCell.options_default.cm_config.lineNumbers = true;
-        IPython.CodeCell.options_default.cm_config.cursorBlinkRate = 330;
-        IPython.CodeCell.options_default.cm_config.lineWrapping = true;
-
-        $('div#header-container').toggle();
-        $('.header-bar').toggle(); // 1px high! WTF?!
-        $('div#maintoolbar').toggle();
-        Jupyter.menubar._size_header()
-
-        IPython.keyboard_manager.command_shortcuts.add_shortcut('Alt-m', {
-            help : 'toggle menu bar',
-            help_index : 'zz',
-            handler : function (event) {
-                $('div#menubar-container').toggle();
-                Jupyter.menubar._size_header()
-                return false;
-            }
-        });
-
-        IPython.keyboard_manager.command_shortcuts.add_shortcut('Alt-h', {
-            help : 'toggle header',
-            help_index : 'zz',
-            handler : function (event) {
-                $('div#header-container').toggle();
-                $('.header-bar').toggle();
-                Jupyter.menubar._size_header()
-                return false;
-            }
-        });
-
-        IPython.keyboard_manager.command_shortcuts.add_shortcut('Alt-c', {
-            help : 'clear all output',
-            help_index : 'zz',
-            handler : function (event) {
-                IPython.notebook.clear_all_output();
-                return false;
-            }
-        });
-
-        IPython.keyboard_manager.command_shortcuts.add_shortcut('Alt-x', {
-            help : 'clear output',
-            help_index : 'zz',
-            handler : function (event) {
-                IPython.notebook.clear_output();
-                return false;
-            }
-        });
-
-        IPython.keyboard_manager.command_shortcuts.add_shortcut('Alt-a', {
-            help : 'merge cell above',
-            help_index : 'zz',
-            handler : function (event) {
-                IPython.notebook.merge_cell_above();
-                return false;
-            }
-        });
-
-        IPython.keyboard_manager.command_shortcuts.add_shortcut('Alt-b', {
-            help : 'merge cell below',
-            help_index : 'zz',
-            handler : function (event) {
-                IPython.notebook.merge_cell_below();
-                return false;
-            }
-        });
-
-        IPython.keyboard_manager.edit_shortcuts.add_shortcut('Alt-s', {
-            help : 'split cell',
-            help_index : 'zz',
-            handler : function (event) {
-                IPython.notebook.split_cell();
-                return false;
-            }
-        });
-
-        IPython.keyboard_manager.command_shortcuts.add_shortcut('Alt-n', {
-            help : 'toggle line number all cells',
-            help_index : 'zz',
-            handler : function (event) {
-                var c = IPython.notebook.get_cells();
-                for(var i in c){
-                    c[i].toggle_line_numbers();
-                }
-                return false;
-            }
-        });
-
-        IPython.keyboard_manager.command_shortcuts.add_shortcut('Ctrl-up', {
-            help : 'go to top cell',
-            help_index : 'zz',
-            handler : function (event) {
-                IPython.notebook.select(0);
-                IPython.notebook.scroll_to_top();
-                return false;
-            }
-        });
-
-        IPython.keyboard_manager.command_shortcuts.add_shortcut('Ctrl-down', {
-            help : 'go to bottom cell',
-            help_index : 'zz',
-            handler : function (event) {
-                var ncells = IPython.notebook.ncells();
-                IPython.notebook.select(ncells-1);
-                IPython.notebook.scroll_to_bottom();
-                return false;
-            }
-        });
-
-        IPython.keyboard_manager.command_shortcuts.add_shortcut('Alt-k', {
-            help : 'move cell up',
-            help_index : 'zz',
-            handler : function (event) {
-                IPython.notebook.move_cell_up();
-                return false;
-            }
-        });
-
-        IPython.keyboard_manager.command_shortcuts.add_shortcut('Alt-j', {
-            help : 'move cell down',
-            help_index : 'zz',
-            handler : function (event) {
-                IPython.notebook.move_cell_down();
-                return false;
-            }
-        });
-    });
-);
