@@ -73,6 +73,11 @@ ul#tabs {margin-bottom: 0px;}
   padding: 10px;
 }
 
+/*fix Upload button padding*/
+.alternate_upload .btn-upload {
+    height: 21.5px;
+}
+
 /*Notebook ==================================================================*/
 
 #site {background-color: #2b303b;}
@@ -127,18 +132,12 @@ div.output_area pre {
 
 div.cell.selected {
   border-radius: 0;
-  border-top: none;
-  border-right: none;
-  border-bottom: none;
-  border-left: 4px solid #65737e;
+  border-color: #303540;
 }
 
 .edit_mode div.cell.selected {
   border-radius: 0;
-  border-top: none;
-  border-right: none;
-  border-bottom:none;
-  border-left: 4px solid #477ca1;
+  border-color: #303540;
 }
 
 /*text between `` in markdown cells*/
