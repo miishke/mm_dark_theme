@@ -138,6 +138,11 @@ div.cell.selected {
   border-color: #303540;
 }
 
+div.cell.jupyter-soft-selected{
+  border-radius: 0;
+  border: none;
+}
+
 /*text between `` in markdown cells*/
 .rendered_html code {
   border: none;
