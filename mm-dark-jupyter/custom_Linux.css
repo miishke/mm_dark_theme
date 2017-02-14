@@ -145,13 +145,15 @@ div.cell.jupyter-soft-selected{
   border: none;
 }
 
-/*text between `` in markdown cells*/
-.rendered_html code {
+/*text between ``` in markdown cells*/
+.rendered_html code, .rendered_html pre {
   border: none;
   background-color: #303540;
   color: #7f848d;
-  font-family: 'Noto Sans', sans-serif;
 }
+
+.rendered_html pre { font-family: 'Noto Sans', sans-serif; }
+.rendered_html code { font-family: 'Meslo LG S', monospace; }
 
 blockquote {
   font-style: italic;
